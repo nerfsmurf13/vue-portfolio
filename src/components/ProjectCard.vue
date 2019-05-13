@@ -1,20 +1,4 @@
-<template>
-  <div class="project-card">
-    <div class="project-header">
-      <h1>{{projects[projects]}}</h1>
-    </div>
-    <div class="project-body"></div>
-    <div class="project-footer">
-      <img src="../assets/html_logo.png" alt="HTML Utilized">
-      <img src="../assets/css_logo.png" alt="CSS Utilized">
-      <img src="../assets/js_logo.png" alt="Javascript Utilized">
-      <!--<img src="../images/nodejs_logo.png" alt="Node.js Utilized">
-      <img src="../images/mongodb_logo.png" alt="MongoDB Utilized">-->
-      <br>
-      <img src="../assets/github_logo.png" alt="Github">
-    </div>
-  </div>
-</template>
+<template></template>
 
 <script>
 export default {
@@ -35,21 +19,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 .project-card:hover {
   transform: scale(1.01);
 }

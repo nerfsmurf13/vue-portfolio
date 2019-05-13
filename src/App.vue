@@ -70,6 +70,7 @@ body p {
 .content {
   background: var(--primary);
   border-radius: var(--rounded);
+  padding: 10px;
 }
 
 /* =====Content Contents===== */
