@@ -1,5 +1,6 @@
 <template>
   <div class="project-card project-1">
+    <!-- <div class="projects"> -->
                     <div class="project-header">
                         <h1>{{msg}}</h1>
                     </div>

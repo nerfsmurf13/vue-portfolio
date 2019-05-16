@@ -1,21 +1,25 @@
 <template>
   <div class="projects">
     <!-- <ProjectCard v-for="project in projects" :key="projects"></ProjectCard> -->
-    <div class="project-card" v-for="project in projects" :key="project">
-      <div class="project-header">
-        <h1>{{project.name}}</h1>
+    
+      <div class="project-card" v-for="project in projects" :key="project">
+<router-link :to="project.route">
+        <div class="project-header">
+          <h1>{{project.name}}</h1>
+        </div>
+        <div class="project-body"></div>
+        <div class="project-footer">
+          <img src="../assets/html_logo.png" alt="HTML Utilized">
+          <img src="../assets/css_logo.png" alt="CSS Utilized">
+          <img src="../assets/js_logo.png" alt="Javascript Utilized">
+          <!--<img src="../images/nodejs_logo.png" alt="Node.js Utilized">
+          <img src="../images/mongodb_logo.png" alt="MongoDB Utilized">-->
+          <br>
+          <img src="../assets/github_logo.png" alt="Github">
+        </div>
+     </router-link>
       </div>
-      <div class="project-body"></div>
-      <div class="project-footer">
-        <img src="../assets/html_logo.png" alt="HTML Utilized">
-        <img src="../assets/css_logo.png" alt="CSS Utilized">
-        <img src="../assets/js_logo.png" alt="Javascript Utilized">
-        <!--<img src="../images/nodejs_logo.png" alt="Node.js Utilized">
-        <img src="../images/mongodb_logo.png" alt="MongoDB Utilized">-->
-        <br>
-        <img src="../assets/github_logo.png" alt="Github">
-      </div>
-    </div>
+    
   </div>
 </template>
 
@@ -29,12 +33,13 @@ export default {
   },
   data() {
     return {
-      msg: "Welcome to Your Vue.js App",
       projects: [
-        { name: "Int to Roman", img: "../assets/projects_inventory.jpg" },
-        { name: "Inventory", img: "../assets/projects_inventory.jpg" },
-        { name: "Vue.js", img: "../assets/projects_inventory.jpg" },
-        { name: "Insurance", img: "../assets/projects_inventory.jpg" }
+        { name: "Int to Roman", 
+          route: "/about", 
+          img: "../assets/projects_inventory.jpg" },
+        { name: "Inventory", route: "/", img: "../assets/projects_inventory.jpg" },
+        { name: "Vue.js", route: "/",  img: "../assets/projects_inventory.jpg" },
+        { name: "Insurance", route: "/",  img: "../assets/projects_inventory.jpg" }
       ]
     };
   }
@@ -88,6 +93,10 @@ export default {
   padding-bottom: 20px;
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
+}
+
+.project-header h1 {
+  text-decoration: none;
 }
 
 .project-body {

@@ -2,8 +2,10 @@
   <div id="app">
     <Header/>
     <!-- <router-link to="/about">About</router-link> -->
-    <div class="content">
-      <router-view/>
+    <div class="content page">
+      <transition name="router-anim" enter-active-class="animated slideInLeft" leave-active-class="animated slideOutRight">
+        <router-view/>
+      </transition>
     </div>
     <Footer/>
   </div>
@@ -23,6 +25,7 @@ export default {
 </script>
 
 <style>
+/* @import "https://cdn.jsdelivr.net/npm/animate.css" */
 /* #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -49,6 +52,10 @@ body {
   background: white;
 }
 
+body a{
+   text-decoration: none;
+}
+
 body h1 {
   color: white;
   margin: 0;
@@ -71,6 +78,12 @@ body p {
   background: var(--primary);
   border-radius: var(--rounded);
   padding: 10px;
+  max-height: inherit;
+}
+
+.page {
+  /* position: fixed; */
+  /* width: inherit; */
 }
 
 /* =====Content Contents===== */
@@ -114,5 +127,85 @@ body p {
   padding: 15px;
   /* margin: 0px;
   margin-bottom: px; */
+}
+
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+    
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  animation-delay: 1s;
+  animation-duration: 500ms;
+}
+
+@-webkit-keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@media (print), (prefers-reduced-motion) {
+  .animated {
+    -webkit-animation: unset !important;
+    animation: unset !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
 }
 </style>

@@ -1,7 +1,8 @@
 <template>
   <section class="top-header">
     <div class="intro">
-      <h1>Edward Williams</h1>
+      <router-link to="/">
+      <h1>Edward Williams</h1></router-link>
       <p>Hardware Tech + Web Developer</p>
     </div>
     <div class="profile">
@@ -42,7 +43,7 @@ export default {
   display: grid;
   height: auto;
   grid-auto-columns: 1fr;
-  grid-template-areas: "intro profile";
+  grid-template-areas: "intro profile";  
 }
 
 .intro {
