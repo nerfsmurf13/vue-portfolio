@@ -3,7 +3,12 @@
     <Header/>
     <!-- <router-link to="/about">About</router-link> -->
     <div class="content page">
-      <transition name="router-anim" enter-active-class="animated slideInLeft" leave-active-class="animated slideOutRight">
+      <transition
+        name="router-anim"
+        enter-active-class="animated slideInLeft"
+        leave-active-class="animated slideOutRight"
+        mode="out-in"
+      >
         <router-view/>
       </transition>
     </div>
@@ -50,10 +55,11 @@ html {
 
 body {
   background: white;
+  overflow-x: hidden;
 }
 
-body a{
-   text-decoration: none;
+body a {
+  text-decoration: none;
 }
 
 body h1 {
@@ -129,6 +135,101 @@ body p {
   margin-bottom: px; */
 }
 
+.projects {
+  font-size: 1.5rem;
+  color: var(--light);
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  text-justify: auto;
+}
+
+.content p {
+  font-size: 1.5rem;
+  color: var(--light);
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+  text-align: center;
+  text-justify: auto;
+  padding: 1rem;
+}
+
+.project-card:hover {
+  transform: scale(1.01);
+}
+
+.project-card {
+  border-radius: var(--rounded);
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "project-header"
+    "project-body"
+    "project-footer";
+  height: var(--card-height);
+  box-shadow: var(--shadow);
+  align-items: center;
+  text-align: center;
+  text-justify: auto;
+}
+
+.project-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+}
+
+.project-header h1 {
+  text-decoration: none;
+}
+
+.project-body {
+  /* margin: 20px; */
+  /* background-color: yellow; */
+  margin: 0 20px 40px 20px;
+  color: black;
+  font-size: 1.5rem;
+  /* background-color: rgba(0, 0, 0, 0.7);
+  width: 100%; */
+}
+
+.project-body p {
+  padding: 1rem 0;
+  color: white;
+}
+
+.project-body p a {
+  background-color: #32b259;
+  color: white;
+  padding: 1rem;
+  border-radius: var(--rounded);
+  box-shadow: var(--shadow);
+}
+
+.project-footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+}
+
+.project-card img {
+  height: 4rem;
+  opacity: 1;
+  margin: 0px;
+  padding: 0px;
+}
+
+.project-card-details img {
+  height: 4rem;
+  opacity: 1;
+  margin: 0px;
+  padding: 0px;
+}
+
 @-webkit-keyframes slideInLeft {
   from {
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -147,7 +248,6 @@ body p {
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
     visibility: visible;
-    
   }
 
   to {
@@ -159,8 +259,7 @@ body p {
 .slideInLeft {
   -webkit-animation-name: slideInLeft;
   animation-name: slideInLeft;
-  animation-delay: 1s;
-  animation-duration: 500ms;
+  /* animation-duration: 25ms; */
 }
 
 @-webkit-keyframes slideOutRight {
@@ -200,12 +299,12 @@ body p {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-@media (print), (prefers-reduced-motion) {
+/* @media (print), (prefers-reduced-motion) {
   .animated {
     -webkit-animation: unset !important;
     animation: unset !important;
     -webkit-transition: none !important;
     transition: none !important;
   }
-}
+} */
 </style>
