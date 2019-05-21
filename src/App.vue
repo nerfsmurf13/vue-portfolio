@@ -163,23 +163,24 @@ body p {
 .project-card {
   border-radius: var(--rounded);
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-areas:
     "project-header"
-    "project-body"
     "project-footer";
   height: var(--card-height);
   box-shadow: var(--shadow);
-  align-items: center;
+  /* align-items: center;
   text-align: center;
-  text-justify: auto;
+  text-justify: auto; */
 }
 
 .project-header {
+  grid-area: project-header;
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: rgba(0, 0, 0, 0.7);
-  width: 100%;
+  align-self: center;
+  /* width: 100%; */
 }
 
 .project-header h1 {
@@ -189,6 +190,7 @@ body p {
 .project-body {
   /* margin: 20px; */
   /* background-color: yellow; */
+  grid-area: project-body;
   margin: 0 20px 40px 20px;
   color: black;
   font-size: 1.5rem;
@@ -210,10 +212,12 @@ body p {
 }
 
 .project-footer {
+  grid-area: project-footer;
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.7);
   width: 100%;
+  align-self: center;
 }
 
 .project-card img {
@@ -307,4 +311,49 @@ body p {
     transition: none !important;
   }
 } */
+@media (max-width: 1200px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .top-header {
+    grid-template-areas:
+      "intro"
+      "profile";
+  }
+
+  .intro p {
+    margin-top: 15px;
+  }
+
+  .profile {
+    margin-top: 20px;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  /* ====Index==== */
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .top-header {
+    grid-template-areas:
+      "intro"
+      "profile";
+  }
+
+  .profile {
+    padding-top: 0;
+  }
+
+  /* ====Webapps Details==== */
+  .project-details {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "details"
+      "showcase";
+  }
+}
 </style>

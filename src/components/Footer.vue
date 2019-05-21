@@ -9,7 +9,9 @@
     </div>
 
     <div class="social">
-      <img src="../assets/linkedin_logo.png" alt="Edward Williams' LinkedIn">
+      <a href="https://www.linkedin.com/in/edwardalexanderwilliams/">
+        <img src="../assets/linkedin_logo.png" alt="Edward Williams' LinkedIn">
+      </a>
     </div>
   </div>
 </template>

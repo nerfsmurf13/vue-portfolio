@@ -19,7 +19,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.project-card:hover {
+/* .project-card:hover {
   transform: scale(1.01);
 }
 
@@ -46,13 +46,11 @@ export default {
 }
 
 .project-body {
-  /* margin: 20px; */
-  /* background-color: yellow; */
+
   margin: 0 20px 40px 20px;
   color: black;
   font-size: 1.5rem;
-  /* background-color: rgba(0, 0, 0, 0.7);
-  width: 100%; */
+
 }
 
 .project-body p {
@@ -87,5 +85,5 @@ export default {
   opacity: 1;
   margin: 0px;
   padding: 0px;
-}
+} */
 </style>
