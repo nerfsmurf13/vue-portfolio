@@ -5,13 +5,19 @@
         <h1>Int to Roman</h1>
       </div>
       <div class="project-body">
-        <p></p>
+        <form @submit="onSubmit" @reset="onReset">
+          <div class="formtext"><input type="text" id="domtextbox" placeholder="1-3999"></input></div>
+          <div class="formsubmit"><button id="domsubmit">Crunch</button></div>
+          <div class="formclear"><button id="domclear">Clear</button></div>
+        </form>
+        <section class="results"><!--Input: <span id="calcinput">--</span> | -->Output: <span id="calcoutput">--</span></br></section>
+        <section class="controls"><!--<button>Styles: OFF</button>--><span id="error-message"></span></section>
       </div>
     </div>
 
     <div class="project-right">
       <div class="project-header">
-        <h1>{{msg}}</h1>
+        <h1>About</h1>
       </div>
       <div class="project-body">
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo provident libero deserunt placeat iste quisquam. Rem a eum perspiciatis, natus sunt tempora facere laboriosam fugit porro quas deserunt maiores. Recusandae.</p>
@@ -34,8 +40,14 @@ export default {
   name: "About",
   data() {
     return {
+      form: {
+        input:'',
+      },
       msg: "About Data"
     };
+  },
+  methods: {
+
   }
 };
 </script>
