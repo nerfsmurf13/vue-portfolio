@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <Header/>
-    <!-- <router-link to="/about">About</router-link> -->
+    <Header />
     <div class="content page">
       <transition
         name="router-anim"
@@ -9,10 +8,10 @@
         leave-active-class="animated slideOutRight"
         mode="out-in"
       >
-        <router-view/>
+        <router-view />
       </transition>
     </div>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 

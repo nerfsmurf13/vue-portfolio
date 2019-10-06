@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import About from '@/components/About'
+import IntToRoman from '@/components/IntToRoman'
 
 Vue.use(Router)
 
@@ -13,9 +13,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'About',
-      component: About
+      path: '/inttoroman',
+      name: 'IntToRoman',
+      component: IntToRoman
     }
   ]
 })
